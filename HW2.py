@@ -1,7 +1,7 @@
 #Name:Connor Altland
 #Class:6th Hour
 #Assignment: HW2
-from dis import print_instructions
+
 
 #1. Print "Hello World!"
 print("Hello World!")
