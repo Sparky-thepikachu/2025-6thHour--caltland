@@ -17,21 +17,21 @@ strVar2 = "Box"
 booVar3 = True
 strVar4 = "Nineteen"
 strVar5 = "Rope"
-strVar6 = 19
+intVar6 = 19
 strVar7 = "19"
-strVar8 = 2
+intVar8 = 2
 booVar9 = True
 booVar10 = False
-booVar11 = "True"
-booVar12 = "False"
+strVar11 = "True"
+strVar12 = "False"
 intVar13 = 5
-Var14 = "The"
-Var15 = "Game"
+strVar14 = "The"
+strVar15 = "Game"
 booVar16 = False
-strVar17 = 3
-strVar18 = 2
-strVar19 = 1
-StrVar20 = Var11
+intVar17 = 3
+intVar18 = 2
+intVar19 = 1
+strVar20 = strVar11
 strVar21 = strVar12
 strVar22 = strVar4
 strVar23 = strVar14
@@ -39,3 +39,4 @@ strVar24 = strVar15
 intVar25 = 6
 
 #3. Take all the variables you labeled as "integer", add them together, and print the result.
+print(intVar1+intVar6+intVar8+intVar13+intVar17+intVar18+intVar19+intVar25)
