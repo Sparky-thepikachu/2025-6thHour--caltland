@@ -26,7 +26,7 @@ print(int_list)
 #7. Add the 1st three numbers on the sorted list together and print the sum.
 print(sum(int_list))
 #8. Create a list with two strings, two variables, and too boolean values.
-mix_list = ["Bob",9,"false"]
+mix_list = ["Bob","Jeff", 9, 5,"true","false"]
 print(mix_list)
 #9. Create a print statement that asks the user to input their own index value for the list on
 print(mix_list[int(input())])
