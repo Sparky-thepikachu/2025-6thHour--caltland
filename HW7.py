@@ -10,14 +10,14 @@ print('Hello world')
 FavoriteCarDict = {
 "brand" : "Ford",
 "Model" : "RS200",
-"Year" : [1984]
+"Year" : [1984,1985,1986]
 }
 #3. Print the keys of the dictionary from #2.
-print(FavoriteCarDict)
+print(FavoriteCarDict.keys())
 #4. Print the values of the dictionary from #2
 print(FavoriteCarDict.values())
 #5. Print one of the three numbers from the list by itself
-print(FavoriteCarDict["Year"])
+print(FavoriteCarDict["Year"][0])
 #6. Using the update function, add a fourth key to the dictionary and give it a value.
 FavoriteCarDict.update({"Terrain" : "Rally"})
 #7. Print the entire dictionary from #2 with the updated key and value.
@@ -42,7 +42,7 @@ Sixth_hour_Class = {
     },
 }
 #9. Print the names of all three classmates on the same line.
-print(Sixth_hour_Class)
+print(Sixth_hour_Class["student_1"]["Name"],Sixth_hour_Class["student_2"]["Name"],Sixth_hour_Class["student_3"]["Name"],)
 #10. Use the pop function to remove one of the nested dictionaries inside and print the full dictionary from #8.
 Sixth_hour_Class.pop("student_3")
 print(Sixth_hour_Class)
