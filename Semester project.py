@@ -1,11 +1,8 @@
-#Name:
+#Name:Connor Altland
 #Class: 6th Hour
 #Assignment: Semester Project 1
 
 import random
-import time
-
-from requests import HTTPError
 
 #Due to weird time travelling circumstances beyond explanation, you find yourself in 2018 or so
 #working for Larian Studios. Currently, they are working on the early prototypes of the hype
@@ -111,27 +108,35 @@ hero_attack = random.randint(1,20) + 6
 print(f"{Villain} rolled {Troll_roll}")
 
 
-
-if Troll_roll >= Gale_roll:
-    print(f"{Villain} goes first")
-    villain_attack = random.randint(1,20) + enemyDict["Troll"]["AtkMod"]
-    if villain_attack > partyDict["Gale"]["AC"]:
-        print("attack hit")
-        partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"]
-        print(partyDict["Gale"]["HP"])
-        print(enemyDict["Troll"]["Damage"])
-    elif villain_attack < partyDict["Gale"]["AC"]:
-        print("attack missed")
-
-
-
-elif Gale_roll > Troll_roll:
-    print(f"{Hero} goes first")
-    villain_attack = random.randint(1, 20) + enemyDict["Troll"]["AtkMod"]
-    if hero_attack > enemyDict["Troll"]["AC"]:
-        print("attack hit")
-        enemyDict["Troll"]["HP"] -= partyDict["Gale"]["Damage"]
-        print(enemyDict["Troll"]["HP"])
-        print(partyDict["Gale"]["Damage"])
-    elif hero_attack <= enemyDict["Troll"]["AC"]:
-        print("attack missed")
+while True:
+    if Troll_roll >= Gale_roll:
+        print(f"{Villain} goes first")
+        villain_attack = random.randint(1,20) + enemyDict["Troll"]["AtkMod"]
+        if villain_attack > partyDict["Gale"]["AC"]:
+            print("attack hit")
+            partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"]
+            print(partyDict["Gale"]["HP"])
+            print(enemyDict["Troll"]["Damage"])
+        elif villain_attack < partyDict["Gale"]["AC"]:
+            print("attack missed")
+            if partyDict["Gale"]["HP"] >= 1:
+                continue
+            elif partyDict["Gale"]["HP"] <= 0:
+                print("Gale died , Troll wins")
+                break
+while True:
+    elif Gale_roll >= Troll_roll:
+        print(f"{Hero} goes first")
+        hero_attack = random.randint(1, 20) + enemyDict["Troll"]["AtkMod"]
+        if hero_attack > enemyDict["Troll"]["AC"]:
+            print("attack hit")
+            enemyDict["Troll"]["HP"] -= partyDict["Gale"]["Damage"]
+            print(enemyDict["Troll"]["HP"])
+            print(partyDict["Gale"]["Damage"])
+        elif hero_attack <= enemyDict["Troll"]["AC"]:
+            print("attack missed")
+        if  enemyDict["Troll"]["HP"] >= 1:
+            continue
+        elif enemyDict["Troll"]["HP"] <= 0:
+            print("Troll died , Gale wins")
+            break
