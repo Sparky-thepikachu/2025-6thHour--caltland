@@ -109,22 +109,44 @@ print(f"{Villain} rolled {Troll_roll}")
 
 
 while True:
-    if Troll_roll >= Gale_roll:
+    print("Starting Turn.")
+    Gale_roll = random.randint(1, 20) + partyDict["Gale"]["Init"]
+    Troll_roll = random.randint(1, 20) + enemyDict["Troll"]["Init"]
+    print(f"{Hero} rolled {Gale_roll}")
+    hero_attack = random.randint(1, 20) + 6
+    print(f"{Villain} rolled {Troll_roll}")
+    if Troll_roll > Gale_roll:
         print(f"{Villain} goes first")
         villain_attack = random.randint(1,20) + enemyDict["Troll"]["AtkMod"]
-        if villain_attack > partyDict["Gale"]["AC"]:
-            print("attack hit")
-            partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"]
-            print(partyDict["Gale"]["HP"])
-            print(enemyDict["Troll"]["Damage"])
-        elif villain_attack < partyDict["Gale"]["AC"]:
-            print("attack missed")
-            if partyDict["Gale"]["HP"] >= 1:
+        if villain_attack == 20:
+            print("Natural 20")
+            partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"] * 2
+        else:
+            if villain_attack > partyDict["Gale"]["AC"]:
+                print("attack hit")
+                partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"]
+                print(partyDict["Gale"]["HP"])
+                print(enemyDict["Troll"]["Damage"])
+            elif villain_attack < partyDict["Gale"]["AC"]:
+                print("attack missed")
+        if partyDict["Gale"]["HP"] >= 1:
                 continue
-            elif partyDict["Gale"]["HP"] <= 0:
+        elif partyDict["Gale"]["HP"] <= 0:
                 print("Gale died , Troll wins")
                 break
-while True:
+        if hero_attack > enemyDict["Troll"]["AC"]:
+            print("attack hit")
+            enemyDict["Troll"]["HP"] -= partyDict["Gale"]["Damage"]
+            print(enemyDict["Troll"]["HP"])
+            print(partyDict["Gale"]["Damage"])
+        elif hero_attack <= enemyDict["Troll"]["AC"]:
+            print("attack missed")
+        if enemyDict["Troll"]["HP"] >= 1:
+            continue
+        elif enemyDict["Troll"]["HP"] <= 0:
+            print("Troll died , Gale wins")
+            break
+
     elif Gale_roll >= Troll_roll:
         print(f"{Hero} goes first")
         hero_attack = random.randint(1, 20) + enemyDict["Troll"]["AtkMod"]
@@ -140,3 +162,22 @@ while True:
         elif enemyDict["Troll"]["HP"] <= 0:
             print("Troll died , Gale wins")
             break
+    if Troll_roll > Gale_roll:
+        print(f"{Villain} goes first")
+        villain_attack = random.randint(1, 20) + enemyDict["Troll"]["AtkMod"]
+        if villain_attack == 20:
+            print("Natural 20")
+            partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"] * 2
+        else:
+            if villain_attack > partyDict["Gale"]["AC"]:
+                print("attack hit")
+                partyDict["Gale"]["HP"] -= enemyDict["Troll"]["Damage"]
+                print(partyDict["Gale"]["HP"])
+                print(enemyDict["Troll"]["Damage"])
+            elif villain_attack < partyDict["Gale"]["AC"]:
+                print("attack missed")
+                if partyDict["Gale"]["HP"] >= 1:
+                    continue
+                elif partyDict["Gale"]["HP"] <= 0:
+                    print("Gale died , Troll wins")
+                    break
