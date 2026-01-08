@@ -45,47 +45,7 @@ while i < 100:
     print(i)
     i +=1
 #14. Free space. Do something creative. :)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-repeated_word = word * repetitions
-print(repeated_word)
-word = "Among us!"
-repetitions = 100
-
-
+word = ("Among us!")
+repetition = 1000
+for i in range(repetition):
+    print(word)
