@@ -14,24 +14,31 @@ c = int(input("Insert integer number: "))
 e = (a + b) / c
 print(e)
 #5. Round the result from #3 up or down, and then determine if it is even or odd.
-print(round(e))
+e = (round(e))
+if e % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
 #6. Create a list of five different random integers between 1 and 10.
-random_list = [5,8,2,9,1]
+random_list = [random.randint(1, 10),
+               random.randint(1, 10),
+               random.randint(1, 10),
+               random.randint(1, 10),
+               random.randint(1, 10)]
+print(random_list)
 #7. Print the 4th number in the list.
-print("2")
+print(random_list[3])
 #8. Append another integer to the end of the list, also random from 1 to 10.
-random_list.append(6)
+random_list.append(random.randint(1, 10))
 print(random_list)
 #9. Sort the list from lowest to highest and then print the 4th number in the list again.
-random_list.sort(reverse=True)
-print(random_list)
+random_list.sort()
+print(random_list[3])
 #10. Create a while loop that starts at 1, prints i and then adds i to itself until it is greater than 100.
 i = 1
 while i < 100:
-    if i ==100:
-        break
     print(i)
-    i +=1
+    i +=i
 #11. Create a list containing the names of five other students in the classroom.
 name_list = ["Ethan","Kash","Eli","Tristin","Ally"]
 #12. Create a for loop that individually prints out the names of each student in the list.
@@ -40,7 +47,7 @@ print(name_list)
 #13. Create a for loop that counts from 1 to 100, but ends early if the number is a multiple of 10.
 i = 1
 while i < 100:
-    if i ==100:
+    if i % 10 == 0:
         break
     print(i)
     i +=1
