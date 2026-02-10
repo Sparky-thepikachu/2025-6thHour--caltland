@@ -25,10 +25,7 @@ def number_list(count):
 
 
 #5. Call all of the functions created in 1 - 4 with relevant arguments.
-animal_list("kitty","bunny", "puppy", "cub","calf")
-average(7,3,1)
-hello_world()
-number_list(5)
+
 #6. Create a variable x that has the value of 2. Print x
 x = 2
 print(x)
