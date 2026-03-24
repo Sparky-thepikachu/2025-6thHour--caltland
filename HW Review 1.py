@@ -40,7 +40,7 @@ print(k)
 l = i * j
 print(l)
 #9. Create a variable that asks the user for a number with a decimal (a float).
-decimal_number = int(input("What is your decimal number? "))
+decimal_number = float(input("What is your decimal number? "))
 print(decimal_number)
 #10. Round the variable from #9 to the nearest whole number and print the result.
 rounded = round(decimal_number)
